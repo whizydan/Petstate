@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".View_Visit">
+
+    <TextView
+        android:id="@+id/tvWeightFixed"
+        android:layout_width="126dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="38dp"
+        android:text="Weight in kg:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTempFixed" />
+
+    <TextView
+        android:id="@+id/tvDiagnosisFixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="35dp"
+        android:text="Diagnosis:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrescription" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="142dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
+        app:srcCompat="@drawable/alvan_nee_t_0ew_sebse_unsplash"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@drawable/alvan_nee_t_0ew_sebse_unsplash" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="45dp"
+        android:background="#E3E0E0"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="45dp"
+        android:background="#E3E0E0"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvPrescription"
+        android:layout_width="300dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="5dp"
+        android:background="#E3E0E0"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrescriptionFixed" />
+
+    <TextView
+        android:id="@+id/tvDiagnosis"
+        android:layout_width="300dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="5dp"
+        android:background="#E3E0E0"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiagnosisFixed" />
+
+    <TextView
+        android:id="@+id/tvPrescriptionFixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="33dp"
+        android:text="Prescription:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeightFixed" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="137dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="115dp"
+        android:background="#E3E0E0"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    <TextView
+        android:id="@+id/tvTempFixed"
+        android:layout_width="124dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="41dp"
+        android:text="Temperature:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="123dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="Date of Visit:"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/imageView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

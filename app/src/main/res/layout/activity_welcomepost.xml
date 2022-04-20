@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#682906">
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/linearLayout4"
+        android:orientation="vertical"
+        android:gravity="center" >
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/usernamewp"
+            android:textColor="#EEE7BA"
+            android:textColorHint="#EEE7BA"
+            android:hint="Username"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/emailwp"
+            android:textColor="#EEE7BA"
+            android:textColorHint="#EEE7BA"
+            android:hint="Email"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/usertype"
+            android:textColor="#EEE7BA"
+            android:textColorHint="#EEE7BA"
+            android:hint="type of user"
+            android:layout_marginBottom="10dp"/>
+        <!-- Login Button -->
+
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/btn_login"
+            android:background="#EEE7BA"
+            android:textColor="#682906"
+            android:text="Log_out"
+            android:onClick="onLogout"
+            android:layout_marginTop="20dip"/>
+
+    </LinearLayout>
+</RelativeLayout>

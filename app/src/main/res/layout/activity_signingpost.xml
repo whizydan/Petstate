@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#682906"
+    tools:context=".Signing">
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/linearLayout4"
+        android:orientation="vertical"
+        android:gravity="center" >
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/emailsp"
+            android:textColor="#EEE7BA"
+            android:textColorHint="#EEE7BA"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/passwordsp"
+            android:textColor="#EEE7BA"
+            android:textColorHint="#EEE7BA"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Login Button -->
+
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/btn_login"
+            android:background="#EEE7BA"
+            android:textColor="#682906"
+            android:text="Log_in"
+            android:onClick="loginButtonClicked"
+            android:layout_marginTop="20dip"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/progressBar"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:visibility="gone"
+        android:layout_gravity="center|bottom"/>
+</RelativeLayout>

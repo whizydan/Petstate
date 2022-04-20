@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "560464247154",
+    "firebase_url": "https://petstate-61e15-default-rtdb.firebaseio.com",
+    "project_id": "petstate-61e15",
+    "storage_bucket": "petstate-61e15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560464247154:android:fea1267a71940f14ef45eb",
+        "android_client_info": {
+          "package_name": "com.example.petstate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560464247154-40k7tvomd8eprl3m7j1thuhqeeldrhs2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.petstate",
+            "certificate_hash": "1ba934d05d7bc6bfa60e3c01e5b73e1364ca8e37"
+          }
+        },
+        {
+          "client_id": "560464247154-co1s6k7him4h4g56luvvrvre3evdjula.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9vNxwkCM0A948lMnU_X_3xvgMo_fFySw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560464247154-co1s6k7him4h4g56luvvrvre3evdjula.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

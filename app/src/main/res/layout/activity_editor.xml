@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    >
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_overview"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_pet_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_pet_name"
+                android:inputType="textCapWords"
+                android:minHeight="48dp" />
+
+            <!-- Breed field -->
+            <EditText
+                android:id="@+id/edit_pet_breed"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_pet_breed"
+                android:inputType="textCapWords"
+                android:minHeight="48dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Gender category -->
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_gender"
+            android:textColor="@color/button" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Gender drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Colour category -->
+    <LinearLayout
+        android:id="@+id/container_measurement"
+        android:layout_width="379dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_measurement"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_weight"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="text"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--Behaviour-->
+    <LinearLayout
+        android:id="@+id/container_colour"
+        android:layout_width="385dp"
+        android:layout_height="84dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_behaviour"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_colour"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Bowel-->
+    <LinearLayout
+        android:id="@+id/container_bowel"
+        android:layout_width="379dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_bowel"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_bowel"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- Fur -->
+    <LinearLayout
+        android:id="@+id/container_fur"
+        android:layout_width="379dp"
+        android:layout_height="73dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_fur"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_fur"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <!--Feeding-->
+    <LinearLayout
+        android:id="@+id/container_feed"
+        android:layout_width="378dp"
+        android:layout_height="71dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_feed"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_feed"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <!-- SLEEP-->
+    <LinearLayout
+        android:id="@+id/container_sleep"
+        android:layout_width="381dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_sleep"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_sleep"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--OTHER-->
+    <LinearLayout
+        android:id="@+id/container_other"
+        android:layout_width="379dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_other"
+            android:textColor="@color/button" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_pet_other"
+                style="@style/EditorFieldStyle"
+
+                android:inputType="textMultiLine|text"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <!-- Units for weight (kg) -->
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

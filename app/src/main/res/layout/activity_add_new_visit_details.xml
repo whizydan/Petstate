@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="134dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/button"
+        android:text="@string/save"
+        android:textColor="@color/background"
+        android:textSize="16sp"
+        app:cornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPrescriptionDetails" />
+
+    <TextView
+        android:id="@+id/tvPrescriptionFixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="267dp"
+        android:text="@string/prescription"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/inputPrescriptionDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDiagnosis" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/diagnosis"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/inputTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="33dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateNow"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:hint="@string/date"
+            android:inputType="datetime" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/inputTemp"
+        android:layout_width="244dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/button"
+        android:ems="10"
+        android:hint="enter pet's temperature "
+        android:inputType="date|number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/inputWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:backgroundTint="@color/button"
+        android:ems="10"
+        android:hint="enter pet's weight"
+        android:inputType="date|number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputDiagnosis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTemp" />
+
+    <EditText
+        android:id="@+id/inputDiagnosis"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/button"
+        android:hint="enter the diagnosis"
+        android:inputType="textLongMessage|textMultiLine"
+        android:isScrollContainer="true"
+        android:maxLines="50"
+        android:overScrollMode="ifContentScrolls"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrescriptionFixed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputWeight"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/inputPrescriptionDetails"
+        android:layout_width="341dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+
+        android:ems="10"
+        android:hint="enter the prescription"
+        android:inputType="textLongMessage|textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrescriptionFixed" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

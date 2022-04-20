@@ -1,0 +1,180 @@
+<resources>
+    <string name="tutorial">
+        Welcome to petstate app.Please Allow the following permissions for proper functionality.
+    </string>
+    <!-- Label for overflow menu option that inserts fake pet data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <!-- Label for overflow menu option that deletes all pet data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Pets</string>
+
+    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_pet">Add a Pet</string>
+
+    <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current pet [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_overview">Overview</string>
+
+    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
+    <string name="category_gender">Gender</string>
+
+    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
+    <string name="category_measurement">Colour</string>
+    <string name="category_behaviour">Behaviour</string>
+    <string name="category_bowel">Bowel Activity</string>
+    <string name="category_fur">Fur/Skin</string>
+    <string name="category_feed">Feeding Habits</string>
+    <string name="category_sleep">Sleeping Habits</string>
+    <string name="category_other">Any other symptoms</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_name">Name</string>
+
+    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_breed">Breed</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_weight">Weight</string>
+
+    <!-- Units for weight of the pet (kilograms) [CHAR LIMIT=5] -->
+    <string name="unit_pet_weight">kg</string>
+
+    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_successful">Pet saved</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_failed">Error with saving pet</string>
+
+    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Get started by adding a pet</string>
+
+    <string name="editor_activity_title_add_pet">What\'s wrong</string>
+
+    <string name="editor_activity_title_edit_pet">Edit Pet</string>
+
+    <string name="editor_update_pet_failed">Error with updating petPet updated</string>
+
+    <string name="editor_update_pet_successful">Pet updated</string>
+
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <string name="discard">DISCARD</string>
+
+    <string name="keep_editing">KEEP EDITING</string>
+
+    <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_pet_successful">Pet deleted</string>
+
+    <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_pet_failed">Error with deleting pet</string>
+
+    <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this pet?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
+    <!-- Label for the pet's breed if the breed is unknown [CHAR LIMIT=20] -->
+    <string name="unknown_breed">Unknown breed</string>
+    <string name="app_name">Petstate</string>
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Analysis</string>
+    <string name="tab_text_3">Database</string>
+    <string name="tab_text_4">Profile</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="hint">Text</string>
+    <string name="date">Date</string>
+    <string name="temperature">Input Temperature</string>
+    <string name="weight">Input Weight</string>
+    <string name="add_new_pet">Add New Pet</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="prescription">Prescription</string>
+    <string name="pets">PETS</string>
+    <string name="address"></string>
+    <string name="uuid"></string>
+    <string name="phone"></string>
+
+    <string name="enter_visit_details">Enter Visit Details</string>
+    <string name="update_visit_details">Update Visit Details</string>
+
+    <string name="todo">TODO</string>
+    <string name="vet_s_diagnosis">Vet\'s Diagnosis</string>
+    <string name="vet_s_prescription">Vet\'s Prescription</string>
+    <string name="Client_Details_Request">Enter Client Details</string>
+    <string name="add_client">Add Client</string>
+    <string name="saveCaps">SAVE</string>
+    <string name="clients">Clients</string>
+    <string name="pet_s_name">Pet\'s Name</string>
+    <string name="client_s_name">Client\'s Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="postal_address">Postal Address</string>
+    <string name="john_doe">John Doe</string>
+    <string name="_123_cairo">123,Cairo</string>
+    <string name="back">Back</string>
+    <string name="already_have_an_account">already have an account</string>
+    <string name="email">email</string>
+    <string name="enter_email">enter email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">forgot password</string>
+    <string name="new_user_register_now">sign up</string>
+    <string name="or">or</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_help">help</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_about">About</string>
+    <string name="forgot_your_password">forgot_your_password</string>
+    <string name="send_code">send_code</string>
+    <string name="happens_to_the_best_of_us">happens_to_the_best_of_us</string>
+    <string name="enter_your_email_address">enter_your_email_address</string>
+    <string name="title_activity_launcher">Launcher</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_add_pet">Add_Pet</string>
+    <string name="immunisation_information">Immunization Info</string>
+    <string name="for_Dogs">For Dogs</string>
+    <string name="dog_Age">Age</string>
+    <string name="large_text">Large Text</string>
+    <string name="dog_Vaccine">Vaccination</string>
+    <string name="gender_unknown">Unknown</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+
+</resources>

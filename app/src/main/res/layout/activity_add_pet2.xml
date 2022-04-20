@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:backgroundTint="@color/background"
+    tools:context=".Add_Pet">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Petstate.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/button"
+            app:popupTheme="@style/Theme.Petstate.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="154dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="166dp"
+        android:clickable="true"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_pet_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/alvan_nee_t_0ew_sebse_unsplash"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/ed_pet_dob"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="339dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+        android:hint="enter pet age in weeks"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:letterSpacing="0.0325"
+        android:textColor="?android:textColorPrimary"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="18.3sp"
+        app:layout_constraintBottom_toTopOf="@+id/edPetType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <EditText
+        android:id="@+id/ed_pet_name"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="257dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+        android:hint="enter pet name"
+        android:letterSpacing="0.0325"
+        android:textColor="?android:textColorPrimary"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/ed_pet_dob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791" />
+
+    <Button
+        android:id="@+id/btSaveNewPet"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/button"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edPetColour"
+        app:rippleColor="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/edPetBreed"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="477dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="@color/button"
+        android:ems="10"
+        android:hint="enter pet's breed"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/edPetColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edPetColour"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="546dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/button"
+        android:ems="10"
+        android:hint="enter pet colour"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/btSaveNewPet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edPetType"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="414dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="@color/button"
+        android:ems="10"
+        android:hint="enter pet type e.g cat or dog"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/edPetBreed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178" />
+
+    <!--    <include layout="@layout/content_add_pet2" />-->
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_marginEnd="@dimen/fab_margin"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="377dp"
+            android:layout_height="303dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/choose_up" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's name"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtAge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtName"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's age"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtAge"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter your phone number"
+            android:inputType="phone"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtcolour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtbehaviour"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's colour"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtsummary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtPhone"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter a brief illness summary"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtfeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtsummary"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in feeding habits"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtsleep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtfeed"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in sleep patterns"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtbehaviour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtsleep"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="ennter changes in behaviour"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtgender"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtcolour"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's gender"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtbowel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtgender"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in bowel activity"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtfur"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtbowel"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="describe the animal's fur"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtother"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtfur"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter any other symptoms"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtother"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:minWidth="160dp"
+            android:text="Save Report"
+            app:cornerRadius="40dp"
+            tools:ignore="TextContrastCheck" />
+
+    </RelativeLayout>
+
+</ScrollView>
