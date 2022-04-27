@@ -1,40 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="10dp">
+    android:background="@color/background">
 
-    <ImageView
-        android:id="@+id/imageViewRecord"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/choose_up"/>
-    <EditText
-        android:id="@+id/edtName"
-        android:hint="Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
-    <EditText
-        android:id="@+id/edtAge"
-        android:hint="Age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
-    <EditText
-        android:id="@+id/edtPhone"
-        android:hint="Phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
-    <Button
-        android:id="@+id/btnUpdate"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:text="Update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imageViewRecord"
+            android:layout_width="377dp"
+            android:layout_height="303dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/choose_up" />
+
+        <EditText
+            android:id="@+id/updtName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewRecord"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's name"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtAge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtName"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's age"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtPhone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtAge"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter your phone number"
+            android:inputType="phone"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtColour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtBehaviour"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's colour"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtSummary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtPhone"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter a brief illness summary"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtFeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtSummary"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in feeding habits"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtSleep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtFeed"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in sleep patterns"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtBehaviour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtSleep"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in behaviour"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtGender"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtColour"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter the pet's gender"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtBowel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtGender"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter changes in bowel activity"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtFur"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtBowel"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="describe the animal's fur"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/updtOther"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtFur"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:ems="10"
+            android:hint="enter any other symptoms"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updtOther"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/button"
+            android:minWidth="160dp"
+            android:text="Save Report"
+            app:cornerRadius="40dp"
+            tools:ignore="TextContrastCheck" />
+
+    </RelativeLayout>
+
+</ScrollView>

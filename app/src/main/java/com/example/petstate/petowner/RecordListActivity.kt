@@ -239,9 +239,18 @@ class RecordListActivity : AppCompatActivity() {
         dialog.setContentView(R.layout.update_dialoguee)
         dialog.setTitle("Update")
         imageViewIcon = dialog.findViewById(R.id.imageViewRecord)
-        val edtName = dialog.findViewById<EditText>(R.id.edtName)
-        val edtAge = dialog.findViewById<EditText>(R.id.edtAge)
-        val edtPhone = dialog.findViewById<EditText>(R.id.edtPhone)
+        val edtName = dialog.findViewById<EditText>(R.id.updtName)
+        val edtAge = dialog.findViewById<EditText>(R.id.updtAge)
+        val edtPhone = dialog.findViewById<EditText>(R.id.updtPhone)
+        val edtOther = dialog.findViewById<EditText>(R.id.updtOther)
+        val edtFur = dialog.findViewById<EditText>(R.id.updtFur)
+        val edtBowel = dialog.findViewById<EditText>(R.id.updtBowel)
+        val edtGender = dialog.findViewById<EditText>(R.id.updtGender)
+        val edtBehaviour = dialog.findViewById<EditText>(R.id.updtBehaviour)
+        val edtSleep = dialog.findViewById<EditText>(R.id.updtSleep)
+        val edtFeed = dialog.findViewById<EditText>(R.id.updtFeed)
+        val edtColour = dialog.findViewById<EditText>(R.id.updtColour)
+        val edtSummary = dialog.findViewById<EditText>(R.id.updtSummary)
         val btnUpdate = dialog.findViewById<Button>(R.id.btnUpdate)
 
         //set width of dialog
@@ -264,6 +273,15 @@ class RecordListActivity : AppCompatActivity() {
                     edtName.text.toString().trim { it <= ' ' },
                     edtAge.text.toString().trim { it <= ' ' },
                     edtPhone.text.toString().trim { it <= ' ' },
+                    edtFur.text.toString().trim { it <= ' ' },
+                    edtBowel.text.toString().trim { it <= ' ' },
+                    edtGender.text.toString().trim { it <= ' ' },
+                    edtBehaviour.text.toString().trim { it <= ' ' },
+                    edtSleep.text.toString().trim { it <= ' ' },
+                    edtFeed.text.toString().trim { it <= ' ' },
+                    edtColour.text.toString().trim { it <= ' ' },
+                    edtSummary.text.toString().trim { it <= ' ' },
+                    edtOther.text.toString().trim { it <= ' ' },
                     Main.imageViewToByte(imageViewIcon),
                     position
                 )

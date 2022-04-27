@@ -47,18 +47,29 @@ public class SQLiteHelper extends SQLiteOpenHelper{
     }
 
     //updateData
-    public void updateData(String name, String age, String phone, byte[] image, int id){
+    public void updateData(String name, String age, String phone, String fur, String bowel,
+                           String gender, String behaviour, String sleep, String feed,
+                           String colour, String summary, String other, byte[] image, int id){
         SQLiteDatabase database = getWritableDatabase();
         //query to update record
-        String sql = "UPDATE RECORD SET name=?, age=?, phone=?, image=? WHERE id=?";
+        String sql = "UPDATE RECORD SET name=?, age=?, phone=?, fur=?, bowel=?, gender=?, behaviour=?, sleep=?, feed=?, colour=?, summary=?, other=?, image=? WHERE id=?";
 
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindString(1, name);
         statement.bindString(2, age);
         statement.bindString(3, phone);
-        statement.bindBlob(4, image);
-        statement.bindDouble(5, (double)id);
+        statement.bindString(4, fur);
+        statement.bindString(5, bowel);
+        statement.bindString(6, gender);
+        statement.bindString(7, behaviour);
+        statement.bindString(8, sleep);
+        statement.bindString(9, feed);
+        statement.bindString(10, colour);
+        statement.bindString(11, summary);
+        statement.bindString(12, other);
+        statement.bindBlob(13, image);
+        statement.bindDouble(14, (double)id);
 
         statement.execute();
         database.close();
