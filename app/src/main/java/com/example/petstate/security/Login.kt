@@ -12,6 +12,7 @@ import androidx.constraintlayout.motion.utils.Oscillator
 import com.example.petstate.MainActivity
 import com.example.petstate.R
 import com.example.petstate.info.BackupFound
+import com.example.petstate.messenger.TinyDB
 import com.example.petstate.petowner.RecordListActivity
 import com.example.petstate.petowner.post.User
 import com.google.android.gms.tasks.OnCompleteListener
@@ -80,7 +81,9 @@ class Login() : AppCompatActivity() {
                 else -> {
                     val email = email.getText().toString().trim()
                     val password = password.getText().toString().trim()
-                    mAuth.signInWithEmailAndPassword(email, password)
+                    val usermodel = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
+                    launch(usermodel)
+                    /*mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 //Display newly updated nme and email
@@ -92,7 +95,7 @@ class Login() : AppCompatActivity() {
                             } else {
                                 Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
                             }
-                        })
+                        })*/
                 }
             }
         }
@@ -102,6 +105,8 @@ class Login() : AppCompatActivity() {
     private fun launch(type:String) {
         val intent = Intent(this, BackupFound::class.java)
         intent.putExtra("type",type)
+        val tiny = TinyDB(applicationContext)
+        tiny.putString("type",type)
         startActivity(intent)
         finish()
     }

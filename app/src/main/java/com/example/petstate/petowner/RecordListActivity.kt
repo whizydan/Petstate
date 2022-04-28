@@ -85,6 +85,7 @@ class RecordListActivity : AppCompatActivity() {
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
         val tinydb = TinyDB(applicationContext)
+        tinydb.putString("auth","011")
         getdata()
         mListView = findViewById(R.id.listView)
         val editdata = findViewById<FloatingActionButton>(R.id.Editdata)

@@ -20,8 +20,6 @@ import com.example.petstate.databasetools.clientsDataClass
 import com.example.petstate.info.help
 import com.example.petstate.messenger.ChatActivity
 import com.example.petstate.messenger.TinyDB
-import com.example.petstate.petowner.TestData
-import com.example.petstate.petowner.post.MainActivity2
 import com.example.petstate.security.Login
 import com.example.petstate.ui.NewClientDetails
 import com.example.petstate.ui.Settings
@@ -60,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val tinydb = TinyDB(applicationContext)
         tinydb.putString("vetname",uid)
+        tinydb.putString("auth","0988")
         // RemoteViews are used to use the content of
         // some different layout apart from the current activity layout
         val contentView = RemoteViews(packageName, R.layout.message)
@@ -221,12 +220,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signOut() {
-        var mAuth = FirebaseAuth.getInstance()
-        mAuth.signOut()
-        val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        var editor = sharedPreferences.edit()
-        editor.putString("type","vet")
-        editor.commit()
+        val tinydb = TinyDB(applicationContext)
+        tinydb.putString("auth","")
         val intent = Intent(this,Login::class.java)
         startActivity(intent)
         finish()

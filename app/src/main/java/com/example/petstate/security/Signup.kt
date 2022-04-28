@@ -18,8 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import android.app.ProgressDialog
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -106,7 +104,10 @@ class Signup : AppCompatActivity() {
                     val pass = password.getText().toString()
                     val email = email.getText().toString()
                     val phonenumber = phone.getText().toString()
-                    mAuth.createUserWithEmailAndPassword(email, pass)
+                    Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this,Login::class.java))
+                    finish()
+                    /*mAuth.createUserWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val usertype = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
@@ -115,7 +116,7 @@ class Signup : AppCompatActivity() {
                                 Toast.makeText(this, "Registration Failed", Toast.LENGTH_LONG)
                                     .show()
                             }
-                        })
+                        })*/
                 }
 
             }

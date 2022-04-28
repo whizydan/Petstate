@@ -7,6 +7,7 @@ import com.example.petstate.security.Login
 import java.util.*
 import android.content.Intent
 import com.example.petstate.MainActivity
+import com.example.petstate.messenger.TinyDB
 import com.google.firebase.auth.FirebaseAuth
 import com.example.petstate.petowner.Main
 import com.example.petstate.petowner.RecordListActivity
@@ -27,10 +28,11 @@ class Launcher : AppCompatActivity() {
 
     }
     fun runner(){
-        val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        val key = sharedPreferences.getString("type","null")
-        var mAuth = FirebaseAuth.getInstance()
-        if (mAuth.getCurrentUser() == null){
+        val tinydb = TinyDB(applicationContext)
+        val key = tinydb.getString("type")
+        val tinyDB = TinyDB(applicationContext)
+        val currentuser = tinyDB.getString("auth")
+        if (currentuser == ""){
             val intent = Intent(this,Login::class.java)
             startActivity(intent)
             finish()
