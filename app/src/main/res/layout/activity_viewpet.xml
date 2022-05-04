@@ -9,7 +9,7 @@
 
     <View
         android:id="@+id/visitsview"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="240dp"
         android:background="@color/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
 
     <ListView
         android:id="@+id/listings"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="575dp"
         android:background="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
