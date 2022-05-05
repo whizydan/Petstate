@@ -1,4 +1,4 @@
-# SHAREthem
+# PETSTATE 🐕‍🦺
 ![App_Icon](app/src/main/ic_launcher-playstore.png?raw=true "app-icon")
 
 Petstate facilitates communication between vets and their clients remotely. 
