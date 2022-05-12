@@ -1,6 +1,7 @@
 package com.example.petstate
 
 import android.annotation.SuppressLint
+import android.app.DialogFragment.STYLE_NO_FRAME
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,11 +9,17 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Paint
 import android.os.Build
 import android.os.Bundle
+import android.os.Vibrator
+import android.view.MenuItem
+import android.view.View
 import android.widget.ListView
 import android.widget.RemoteViews
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import com.example.petstate.adapters.Bottomsheet
 import com.example.petstate.adapters.ClientListAdapter
 import com.example.petstate.databasetools.DatabaseHandler
@@ -35,13 +42,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-
+    TODO("READD project to firebase")
     var isAllFabsVisible: Boolean = false
     lateinit var notificationManager: NotificationManager
     lateinit var notificationChannel: NotificationChannel
     lateinit var builder: Notification.Builder
     private val channelId = "i.apps.notifications"
     private val description = "Test notification"
+    private var isselected:Boolean = false
     @SuppressLint("RemoteViewLayout")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,6 +125,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.About -> {
                     val bottomsheet = Bottomsheet()
+                    bottomsheet.setStyle(DialogFragment.STYLE_NO_FRAME,R.style.bottomsheet)
                     bottomsheet.show(getSupportFragmentManager(),"about page")
                     true
 
@@ -156,13 +165,36 @@ class MainActivity : AppCompatActivity() {
             )
 
         listview.adapter = thisListAdapter
-        listview.setOnItemClickListener { parent, _, position, _ ->
+        listview.setOnItemClickListener { adapterView, view, i, l ->  }
+        listview.setOnItemClickListener { parent, adapterview, position, _ ->
             val element = parent.getItemIdAtPosition(position)
             val intent = Intent(this, Viewpet::class.java)
             intent.putExtra("client_id",element.toString())
             startActivity(intent)
         }
+        val del = findViewById<View>(R.id.delselect)
+        listview.setOnItemLongClickListener { adapterView, view, _, _ ->
+            val search = findViewById<View>(R.id.app_bar_search)
+            if (!isselected){
+                isselected = true
+                search.visibility = View.GONE
+                del.visibility = View.VISIBLE
+                view.setBackgroundColor(Color.CYAN)
+            }
+            else if (isselected){
+                isselected = false
+                search.visibility = View.VISIBLE
+                del.visibility = View.GONE
+                view.setBackgroundColor(Color.TRANSPARENT)
+            }
 
+
+            true
+        }
+
+        del.setOnClickListener {
+            Toast.makeText(this,"you clicked delete",Toast.LENGTH_SHORT).show()
+        }
 
         //fab to show other fabs and go to add new client
         fabShowFabs.setOnClickListener() {

@@ -7,11 +7,24 @@
     android:background="@color/background"
     tools:context=".ui.Viewpet">
 
-    <View
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/visitsview"
+        app:rippleColor="@color/colorAccent"
+        app:srcCompat="@drawable/ic_baseline_camera_24" />
+
+    <ImageView
         android:id="@+id/visitsview"
-        android:layout_width="392dp"
-        android:layout_height="240dp"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
         android:background="@color/button"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,38 +86,37 @@
         android:id="@+id/petName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
         android:textColor="@color/white"
         android:textColorHighlight="@color/background"
         android:textColorLink="@color/background"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/visitsview" />
+        app:layout_constraintBottom_toTopOf="@+id/petBreed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/petType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petName" />
+        app:layout_constraintBottom_toBottomOf="@+id/visitsview"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/petBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petType" />
+        app:layout_constraintBottom_toTopOf="@+id/petType"
+        app:layout_constraintStart_toStartOf="@+id/visitsview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

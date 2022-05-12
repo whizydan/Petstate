@@ -20,27 +20,13 @@
     <!--        tools:layout_editor_absoluteX="61dp"-->
     <!--        tools:layout_editor_absoluteY="282dp" />-->
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/button"
-        app:layout_constraintBottom_toTopOf="@+id/ivProfilePic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.Petstate.PopupOverlay" />
-
     <ImageView
         android:id="@+id/ivProfilePic"
-        android:layout_width="119dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="156dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="50dp"
         android:clickable="false"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_picture"
         app:layout_constraintBottom_toTopOf="@+id/edClientName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,11 +36,11 @@
 
     <EditText
         android:id="@+id/edClientName"
-        android:layout_width="293dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/button"
         android:ems="10"
@@ -68,11 +54,11 @@
 
     <EditText
         android:id="@+id/edClientsEmail"
-        android:layout_width="290dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/button"
         android:ems="10"
@@ -86,12 +72,12 @@
 
     <EditText
         android:id="@+id/edClientPostalAddress"
-        android:layout_width="290dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
 
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/button"
         android:ems="10"
@@ -105,11 +91,11 @@
 
     <EditText
         android:id="@+id/edPhoneNo"
-        android:layout_width="290dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="6dp"
         android:backgroundTint="@color/button"
         android:ems="10"

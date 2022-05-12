@@ -28,6 +28,9 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Animation.Design.BottomSheetDialog." parent="Theme.AppCompat.Light">
+        <item name="android:shadowColor">#83D3DD</item>
+    </style>
 
     <style name="Theme.Petstate.Fullscreen" parent="Theme.Petstate">
         <item name="android:actionBarStyle">@style/Widget.Theme.Petstate.ActionBar.Fullscreen</item>

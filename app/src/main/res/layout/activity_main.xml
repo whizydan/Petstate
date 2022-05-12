@@ -21,7 +21,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/topnavbar"
-        app:title="Petstate" />
+        app:title="Petstate" >
+
+        <View
+            android:id="@+id/delselect"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:background="@drawable/bin"
+            android:paddingEnd="5dp"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="13dp" />
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabShowFabs"

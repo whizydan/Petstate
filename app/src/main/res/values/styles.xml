@@ -71,4 +71,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="bottomsheet"  parent="AppTheme">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+</style>
+
 </resources>

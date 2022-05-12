@@ -22,7 +22,7 @@ class Launcher : AppCompatActivity() {
 
          when the device is relatively fast it does not display this page for an adequate time
          hence the need for a timer.*/
-        Timer("launch",false).schedule(1500){
+        Timer("launch",false).schedule(1000){
             launch()
         }
 
