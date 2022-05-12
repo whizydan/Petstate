@@ -15,6 +15,7 @@ import com.example.petstate.MainActivity
 import com.example.petstate.R
 import com.example.petstate.databasetools.DatabaseHandler
 import com.example.petstate.databasetools.NewVisitDataClass
+import java.time.LocalDateTime
 
 class NewVisitDetails : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
@@ -32,14 +33,15 @@ class NewVisitDetails : AppCompatActivity() {
         val pet_id = intent.getStringExtra("i").toString()
         val toast=Toast.makeText(applicationContext,pet_id, Toast.LENGTH_SHORT)
         toast.show()
-
+        var datetNow = LocalDateTime.now()
+        dateNow.append(datetNow.toString())
         buttonSave.setOnClickListener{
             val diagnosis = inputDiagnosis.getText().toString()
             val temp = inputTemp.getText().toString()
             val weight = inputWeight.getText().toString()
             val prescription = inputPrescriptionDetails.getText().toString()
             //val dateNow = LocalDateTime.now()
-            val dateNow = dateNow.getText().toString()
+            val dateNoww = dateNow.getText().toString()
             var i= pet_id?.toInt()?.plus(1)
 
 
@@ -48,13 +50,13 @@ class NewVisitDetails : AppCompatActivity() {
 
             //                       validation
             if (diagnosis.trim()!="" && temp.trim()!=""
-                && weight.trim()!="" && prescription.trim()!="" && dateNow.trim()!=""
+                && weight.trim()!="" && prescription.trim()!="" && dateNoww.trim()!=""
             ) {
                 val status = databaseHandler.createVisit(
                     NewVisitDataClass(
                         vetDiagnosis = diagnosis,
                         vetPrescription = prescription, petTemperature = temp,
-                        petWeight = weight, dateNow = dateNow, pet_id = pet_id
+                        petWeight = weight, dateNow = dateNoww, pet_id = pet_id
                     )
                 )
                 if (status > -1) {
