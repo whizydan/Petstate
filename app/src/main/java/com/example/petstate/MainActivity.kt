@@ -42,7 +42,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    TODO("READD project to firebase")
+    //TODO("READD project to firebase")
     var isAllFabsVisible: Boolean = false
     lateinit var notificationManager: NotificationManager
     lateinit var notificationChannel: NotificationChannel

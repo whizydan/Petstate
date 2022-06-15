@@ -2,8 +2,6 @@ package com.example.petstate.security
 
 
 
-import android.Manifest
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -18,18 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import android.app.ProgressDialog
-import android.content.pm.PackageManager
-import android.net.Uri
-import android.os.Build
-import android.provider.MediaStore
-import android.view.View
-import androidx.annotation.RequiresApi
-import com.google.android.gms.tasks.Continuation
-import com.google.android.gms.tasks.Task
-import com.google.firebase.storage.UploadTask
-import de.hdodenhof.circleimageview.CircleImageView
-import java.lang.Exception
 
 class Signup : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -104,9 +90,9 @@ class Signup : AppCompatActivity() {
                     val pass = password.getText().toString()
                     val email = email.getText().toString()
                     val phonenumber = phone.getText().toString()
+                    val type = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
                     Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this,Login::class.java))
-                    finish()
+                    login(email,"name",pass,type)
                     /*mAuth.createUserWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
@@ -123,7 +109,7 @@ class Signup : AppCompatActivity() {
         }
     }
     private fun login(email:String,name:String,password:String,usertype:String){
-        mAuth.signInWithEmailAndPassword(email, password)
+        mAuth.signInAnonymously()
             .addOnCompleteListener(this, OnCompleteListener { task ->
                 var mFirebaseDatabaseInstances= FirebaseDatabase.getInstance()
                 if (task.isSuccessful) {

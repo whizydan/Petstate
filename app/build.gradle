@@ -10,7 +10,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.petstate"
+        applicationId "com.egerton.petstate"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -91,6 +91,7 @@ dependencies {
     implementation 'com.github.edsilfer:emoji-keyboard:1.0.0'
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'
     implementation 'com.androidstudy:daraja:1.0.2'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

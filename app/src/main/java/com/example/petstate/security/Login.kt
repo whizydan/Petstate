@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_welcomepost.*
 
 
@@ -28,12 +29,14 @@ class Login() : AppCompatActivity() {
     private var mFirebaseDatabase: DatabaseReference? = null
     private var mFirebaseInstance: FirebaseDatabase? = null
     private var userId: String? = null
+    private var auth : FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
         mFirebaseInstance = FirebaseDatabase.getInstance()
         setContentView(R.layout.activity_login)
+        auth = FirebaseAuth.getInstance()
         val email = findViewById<TextInputEditText>(R.id.inputemail)
         val password = findViewById<TextInputEditText>(R.id.inputpassword)
         val forgotpassword = findViewById<TextView>(R.id.fogtPwd)
@@ -82,7 +85,7 @@ class Login() : AppCompatActivity() {
                     val email = email.getText().toString().trim()
                     val password = password.getText().toString().trim()
                     val usermodel = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
-                    launch(usermodel)
+
                     /*mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
@@ -96,6 +99,19 @@ class Login() : AppCompatActivity() {
                                 Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
                             }
                         })*/
+                    mAuth.signInAnonymously()
+                        .addOnCompleteListener(this) { task ->
+                            if (task.isSuccessful) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG)
+                                    .show()
+                                launch(usermodel)
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(this, "Logg In failed", Toast.LENGTH_LONG)
+                                    .show()
+                            }
+                        }
                 }
             }
         }
