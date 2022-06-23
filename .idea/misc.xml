@@ -4,19 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_about.xml" value="0.25" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_add_pet2.xml" value="0.15726495726495726" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_help.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_homepage.xml" value="0.184375" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_launcher.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_new_client_details.xml" value="0.184375" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_record_list.xml" value="0.15726495726495726" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_settings.xml" value="0.17760416666666667" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_signup.xml" value="0.18" />
-        <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_viewpet.xml" value="0.25" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_viewpet.xml" value="0.2" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_viewpetdetails.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
-        <entry key="..\:/Android/Petstate/app/src/main/res/layout/client_list.xml" value="0.19166666666666668" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/client_list.xml" value="0.17" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/content_about.xml" value="0.19166666666666668" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/content_add_pet.xml" value="0.15726495726495726" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/content_help.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/custom_list.xml" value="0.33" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/delete_dialogue.xml" value="0.184375" />
@@ -28,9 +31,11 @@
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/layout.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/list.xml" value="0.17395833333333333" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/my_row.xml" value="0.19166666666666668" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/layout/row.xml" value="0.15726495726495726" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/settings_activity.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/update_dialogue.xml" value="0.184375" />
         <entry key="..\:/Android/Petstate/app/src/main/res/layout/update_visit_details.xml" value="0.19166666666666668" />
+        <entry key="..\:/Android/Petstate/app/src/main/res/menu/owner.xml" value="0.15726495726495726" />
         <entry key="..\:/Android/Petstate/app/src/main/res/menu/topnavbar.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/xml/header_preferences.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/Petstate/app/src/main/res/xml/sync_preferences.xml" value="0.19166666666666668" />

@@ -50,6 +50,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.DialogFragment
 import com.androidstudy.daraja.Daraja
 import com.androidstudy.daraja.DarajaListener
 import com.androidstudy.daraja.model.AccessToken
@@ -58,7 +59,11 @@ import com.androidstudy.daraja.model.LNMResult
 import com.androidstudy.daraja.util.Env
 import com.androidstudy.daraja.util.TransactionType
 import com.example.petstate.PetCareInfoActivity
+import com.example.petstate.info.help
+import com.example.petstate.security.Login
 import com.example.petstate.transactions.Mpesa
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_record_list.*
 import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -89,9 +94,7 @@ class RecordListActivity : AppCompatActivity() {
         getdata()
         mListView = findViewById(R.id.listView)
         val editdata = findViewById<FloatingActionButton>(R.id.Editdata)
-        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar2)
         val chat = findViewById<FloatingActionButton>(R.id.floatingActionButton3)
-        toolbar.title = "Petstate"
         var paid = tinydb.getString("chattingwithvet")
 
 
@@ -123,27 +126,39 @@ class RecordListActivity : AppCompatActivity() {
 
             }
         }
-        val mOnMenuItemClickListener = Toolbar.OnMenuItemClickListener { item ->
-            val itemId = item.itemId
-            if (itemId == R.id.action_about) {
-                val bottomsheet = Bottomsheet()
-                bottomsheet.show(supportFragmentManager, "bottom sheet about")
-                return@OnMenuItemClickListener true
-            } else if (itemId == R.id.action_logout) {
-                FirebaseAuth.getInstance().signOut()
-            } else if (itemId == R.id.action_share) {
-                val sendIntent = Intent()
-                sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(
-                    Intent.EXTRA_TEXT,
-                    "Check out thi amazing app,you can easily get access to quality health care professionals."
-                )
-                sendIntent.type = "text/plain"
-                val shareIntent = Intent.createChooser(sendIntent, null)
-                startActivity(shareIntent)
+
+
+        toolbar2.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.ownerLogOut -> {
+                    signOut()
+                    true
+                }
+                R.id.ownerShare -> {
+                    val sendIntent = Intent()
+                    sendIntent.action = Intent.ACTION_SEND
+                    sendIntent.putExtra(
+                        Intent.EXTRA_TEXT,
+                        "Check out this amazing app,you can easily get access to quality health care professionals."
+                    )
+                    sendIntent.type = "text/plain"
+                    val shareIntent = Intent.createChooser(sendIntent, null)
+                    startActivity(shareIntent)
+                    true
+                }
+                R.id.ownerabout -> {
+                    val bottomsheet = Bottomsheet()
+                    bottomsheet.setStyle(DialogFragment.STYLE_NO_FRAME,R.style.bottomsheet)
+                    bottomsheet.show(getSupportFragmentManager(),"about page")
+                    true
+
+                }
+                else -> false
             }
-            false
+
+
         }
+
         val viewdata = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         mList = ArrayList()
         mAdapter = RecordListAdapter(this, R.layout.row, mList)
@@ -560,7 +575,12 @@ class RecordListActivity : AppCompatActivity() {
 
         builder.show()
 
-
-
+    }
+    private fun signOut() {
+        val tinydb = TinyDB(applicationContext)
+        tinydb.putString("auth","")
+        val intent = Intent(this, Login::class.java)
+        startActivity(intent)
+        finish()
     }
 }

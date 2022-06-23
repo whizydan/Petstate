@@ -86,10 +86,10 @@ class Login() : AppCompatActivity() {
                     val password = password.getText().toString().trim()
                     val usermodel = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
 
-                    /*mAuth.signInWithEmailAndPassword(email, password)
+                    mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                //Display newly updated nme and email
+                                //Display newly updated name and email
                                 val usermodel = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
                                 userId = mAuth.uid
                                 addUserChangeListener(userId!!,usermodel)
@@ -98,20 +98,7 @@ class Login() : AppCompatActivity() {
                             } else {
                                 Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
                             }
-                        })*/
-                    mAuth.signInAnonymously()
-                        .addOnCompleteListener(this) { task ->
-                            if (task.isSuccessful) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG)
-                                    .show()
-                                launch(usermodel)
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Toast.makeText(this, "Logg In failed", Toast.LENGTH_LONG)
-                                    .show()
-                            }
-                        }
+                        })
                 }
             }
         }

@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:background="@color/button"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,14 +56,14 @@
 
     <ListView
         android:id="@+id/listings"
-        android:layout_width="392dp"
+        android:layout_width="0dp"
         android:layout_height="575dp"
         android:background="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petdata">
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton4">
 
     </ListView>
 

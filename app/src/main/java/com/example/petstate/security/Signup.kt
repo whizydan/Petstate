@@ -91,9 +91,7 @@ class Signup : AppCompatActivity() {
                     val email = email.getText().toString()
                     val phonenumber = phone.getText().toString()
                     val type = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
-                    Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
-                    login(email,"name",pass,type)
-                    /*mAuth.createUserWithEmailAndPassword(email, pass)
+                    mAuth.createUserWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(this, OnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val usertype = (textField.editText as? AutoCompleteTextView)?.editableText.toString()
@@ -102,14 +100,14 @@ class Signup : AppCompatActivity() {
                                 Toast.makeText(this, "Registration Failed", Toast.LENGTH_LONG)
                                     .show()
                             }
-                        })*/
+                        })
                 }
 
             }
         }
     }
     private fun login(email:String,name:String,password:String,usertype:String){
-        mAuth.signInAnonymously()
+        mAuth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener(this, OnCompleteListener { task ->
                 var mFirebaseDatabaseInstances= FirebaseDatabase.getInstance()
                 if (task.isSuccessful) {
