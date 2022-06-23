@@ -10,6 +10,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.petstate.MainActivity
 import com.example.petstate.R
+import com.example.petstate.messenger.TinyDB
 import com.example.petstate.petowner.RecordListActivity
 import com.example.petstate.petowner.post.User
 import com.google.android.gms.tasks.OnCompleteListener
@@ -21,6 +22,7 @@ class Signup : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private var userId:String?=null
     private var emailAddress:String?=null
+    private var tinyDB:TinyDB? = null
 
     val TAG = "welcome"
 
@@ -41,6 +43,7 @@ class Signup : AppCompatActivity() {
         val vet_name = findViewById<EditText>(R.id.PersonName)
         val vet_add = findViewById<EditText>(R.id.Address)
         val phone = findViewById<EditText>(R.id.phone)
+        tinyDB = TinyDB(applicationContext)
 
 
         btn.setOnClickListener {
@@ -125,6 +128,7 @@ class Signup : AppCompatActivity() {
                                     val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
                                     var editor = sharedPreferences.edit()
                                     editor.putString("type",usertype)
+                                    tinyDB?.putString("type",usertype)
                                     editor.commit()
                                     Toast.makeText(this, "Data saved", Toast.LENGTH_LONG).show()
                                     startActivity(Intent(this,RecordListActivity::class.java))
@@ -145,6 +149,7 @@ class Signup : AppCompatActivity() {
                                     val sharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE)
                                     var editor = sharedPreferences.edit()
                                     editor.putString("type",usertype)
+                                    tinyDB?.putString("type",usertype)
                                     editor.commit()
                                     Toast.makeText(this, "Data saved", Toast.LENGTH_LONG).show()
                                     startActivity(Intent(this,MainActivity::class.java))

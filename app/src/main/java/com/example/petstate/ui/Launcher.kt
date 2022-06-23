@@ -12,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.example.petstate.petowner.Main
 import com.example.petstate.petowner.RecordListActivity
 import com.example.petstate.tutorial.about_pets
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.app
 import kotlin.concurrent.schedule
 
 class Launcher : AppCompatActivity() {
@@ -30,9 +32,7 @@ class Launcher : AppCompatActivity() {
     fun runner(){
         val tinydb = TinyDB(applicationContext)
         val key = tinydb.getString("type")
-        val tinyDB = TinyDB(applicationContext)
-        val currentuser = tinyDB.getString("auth")
-        if (currentuser == ""){
+        if (FirebaseAuth.getInstance().currentUser?.uid  == null){
             val intent = Intent(this,Login::class.java)
             startActivity(intent)
             finish()

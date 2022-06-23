@@ -16,15 +16,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af058d82-a911-4e1b-99fa-5d6f0d08d85b" name="Default Changelist" comment="fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/petowner/RecordListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/petowner/RecordListActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/security/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/security/Login.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/security/Signup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/security/Signup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewpet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewpet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/client_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/client_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/ui/Launcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/petstate/ui/Launcher.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -428,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655288617123</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fixes">
+      <created>1655953243676</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1655953243676</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -253,7 +253,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun signOut() {
         val tinydb = TinyDB(applicationContext)
-        tinydb.putString("auth","")
+        tinydb.putString("type","")
+        FirebaseAuth.getInstance().signOut()
         val intent = Intent(this,Login::class.java)
         startActivity(intent)
         finish()
