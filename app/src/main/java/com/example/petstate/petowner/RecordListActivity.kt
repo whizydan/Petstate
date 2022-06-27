@@ -1,55 +1,29 @@
 package com.example.petstate.petowner
 
 import android.Manifest
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
-import com.example.petstate.petowner.RecordListAdapter
-import android.os.Bundle
-import com.example.petstate.R
-import com.example.petstate.messenger.TinyDB
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.appbar.MaterialToolbar
-import android.content.Intent
-import com.example.petstate.messenger.ChatActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import android.content.DialogInterface
-import com.example.petstate.adapters.Bottomsheet
-import com.google.firebase.auth.FirebaseAuth
-import com.example.petstate.petowner.RecordListActivity
-import com.example.petstate.petowner.SQLiteHelper
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.AdapterView.OnItemLongClickListener
 import android.app.Activity
 import android.app.Dialog
-import androidx.core.app.ActivityCompat
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
-import com.theartofdev.edmodo.cropper.CropImage
-import com.theartofdev.edmodo.cropper.CropImageView
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import android.view.LayoutInflater
-import com.google.firebase.storage.UploadTask
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import android.view.Gravity
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import androidx.annotation.RequiresApi
-import android.os.Build
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
+import android.os.Build
+import android.os.Bundle
 import android.os.StrictMode
 import android.text.InputType
 import android.util.Log
-import android.view.Menu
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
+import android.widget.AdapterView.OnItemLongClickListener
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.DialogFragment
 import com.androidstudy.daraja.Daraja
 import com.androidstudy.daraja.DarajaListener
@@ -59,20 +33,28 @@ import com.androidstudy.daraja.model.LNMResult
 import com.androidstudy.daraja.util.Env
 import com.androidstudy.daraja.util.TransactionType
 import com.example.petstate.PetCareInfoActivity
-import com.example.petstate.info.help
+import com.example.petstate.R
+import com.example.petstate.adapters.Bottomsheet
+import com.example.petstate.messenger.ChatActivity
+import com.example.petstate.messenger.TinyDB
 import com.example.petstate.security.Login
-import com.example.petstate.transactions.Mpesa
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_record_list.*
 import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.InputStreamReader
-import java.lang.Exception
 import java.net.URL
-import java.time.LocalDate
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.function.Consumer
 import kotlin.concurrent.schedule
@@ -83,12 +65,14 @@ class RecordListActivity : AppCompatActivity() {
     var mAdapter: RecordListAdapter? = null
     var imageViewIcon: ImageView? = null
     lateinit var daraja: Daraja
+    var builderSingle :AlertDialog.Builder? = null
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record_list)
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
+        builderSingle = AlertDialog.Builder(this)
         val tinydb = TinyDB(applicationContext)
         tinydb.putString("auth","011")
         getdata()
@@ -475,11 +459,22 @@ class RecordListActivity : AppCompatActivity() {
         if (res == "0"){
             //has paid
             val vet: List<*> = tinydb.getListString("vets")
-            Collections.shuffle(vet)
-            var vetid = vet.random().toString()
-            tinydb.putString("chattingwithvet", "true")
-            tinydb.putString("vetname", vetid)
-            startActivity(Intent(this,ChatActivity::class.java))
+            //open an activity then from that activity-set vet
+            builderSingle?.setIcon(R.drawable.logo)
+            builderSingle?.setTitle("Select your vet:-")
+            val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice)
+            vet.forEach {
+                arrayAdapter.add(it.toString())
+            }
+            builderSingle?.setNegativeButton("cancel") { dialog, which -> dialog.dismiss() }
+            builderSingle?.setAdapter(arrayAdapter) { dialog, which ->
+                var vetid = arrayAdapter.getItem(which)
+                tinydb.putString("chattingwithvet", "true")
+                tinydb.putString("vetname", vetid)
+                startActivity(Intent(this,ChatActivity::class.java))
+            }
+            builderSingle?.show()
+
         }
     }
 
@@ -580,8 +575,13 @@ class RecordListActivity : AppCompatActivity() {
         val tinydb = TinyDB(applicationContext)
         FirebaseAuth.getInstance().signOut()
         tinydb.putString("type","")
+        tinydb.putString("chattingwithvet","")
+        tinydb.putString("vetname","")
+        tinydb.putString("waiting","")
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
         finish()
     }
+
+
 }
