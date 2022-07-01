@@ -477,6 +477,7 @@ class RecordListActivity : AppCompatActivity() {
             builderSingle?.setNegativeButton("cancel") { dialog, which -> dialog.dismiss() }
             builderSingle?.setAdapter(arrayAdapter) { dialog, which ->
                 tinydb.putString("chattingwithvet", "true")
+                tinydb.putString("waiting","false")
                 val vetid = vet[which]
                 tinydb.putString("vetname", vetid as String?)
                 Toast.makeText(applicationContext,"you chose $vetid",Toast.LENGTH_LONG).show()
@@ -556,11 +557,7 @@ class RecordListActivity : AppCompatActivity() {
                             "Response here ${lnmResult.ResponseDescription}",
                             Toast.LENGTH_SHORT
                         ).show()
-                        //delay then call verify
-//                        Timer("launch",false).schedule(500){
-//                            var p = phone.removePrefix("0")
-//                            getResponse(p,formateddate)
-//                        }
+
 
                     }
 
