@@ -35,6 +35,7 @@ import com.androidstudy.daraja.util.TransactionType
 import com.example.petstate.PetCareInfoActivity
 import com.example.petstate.R
 import com.example.petstate.adapters.Bottomsheet
+import com.example.petstate.adapters.VetData
 import com.example.petstate.messenger.ChatActivity
 import com.example.petstate.messenger.TinyDB
 import com.example.petstate.security.Login
@@ -57,6 +58,7 @@ import java.net.URL
 import java.time.LocalDateTime
 import java.util.*
 import java.util.function.Consumer
+import kotlin.collections.ArrayList
 import kotlin.concurrent.schedule
 
 class RecordListActivity : AppCompatActivity() {
@@ -66,6 +68,7 @@ class RecordListActivity : AppCompatActivity() {
     var imageViewIcon: ImageView? = null
     lateinit var daraja: Daraja
     var builderSingle :AlertDialog.Builder? = null
+    val names_of_vets: MutableList<String>? = ArrayList<String>()
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -415,17 +418,20 @@ class RecordListActivity : AppCompatActivity() {
     private fun getdata() {
         val firebaseDatabase = FirebaseDatabase.getInstance()
         val databaseReference = firebaseDatabase.getReference("users").child("vet")
-        // calling add value event listener method
-        // for getting the values from database.
         val tinydb = TinyDB(applicationContext)
         databaseReference.addValueEventListener(object : ValueEventListener {
             @RequiresApi(api = Build.VERSION_CODES.N)
             override fun onDataChange(snapshot: DataSnapshot) {
                 val mutableList: MutableList<String> = ArrayList<String>()
+
                 snapshot.children.forEach(Consumer { dataSnapshot ->
                     val key = dataSnapshot.key
+                    val vet_data = dataSnapshot.getValue(VetData::class.java)
+                    val name = vet_data?.name.toString()
+                    names_of_vets?.add(name)
                     mutableList.add(key!!)
                 })
+                tinydb.putListString("vetNames",names_of_vets as ArrayList<String>)
                 tinydb.putListString("vets", mutableList as ArrayList<String?>)
             }
 
@@ -459,18 +465,21 @@ class RecordListActivity : AppCompatActivity() {
         if (res == "0"){
             //has paid
             val vet: List<*> = tinydb.getListString("vets")
+            val vetName :List<*> = tinydb.getListString("vetNames")
             //open an activity then from that activity-set vet
             builderSingle?.setIcon(R.drawable.logo)
             builderSingle?.setTitle("Select your vet:-")
             val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice)
-            vet.forEach {
+            vetName.forEach {
                 arrayAdapter.add(it.toString())
             }
+
             builderSingle?.setNegativeButton("cancel") { dialog, which -> dialog.dismiss() }
             builderSingle?.setAdapter(arrayAdapter) { dialog, which ->
-                var vetid = arrayAdapter.getItem(which)
                 tinydb.putString("chattingwithvet", "true")
-                tinydb.putString("vetname", vetid)
+                val vetid = vet[which]
+                tinydb.putString("vetname", vetid as String?)
+                Toast.makeText(applicationContext,"you chose $vetid",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,ChatActivity::class.java))
             }
             builderSingle?.show()
@@ -548,10 +557,10 @@ class RecordListActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                         //delay then call verify
-                        Timer("launch",false).schedule(4500){
-                            var p = phone.removePrefix("0")
-                            getResponse(p,formateddate)
-                        }
+//                        Timer("launch",false).schedule(500){
+//                            var p = phone.removePrefix("0")
+//                            getResponse(p,formateddate)
+//                        }
 
                     }
 
@@ -565,6 +574,9 @@ class RecordListActivity : AppCompatActivity() {
                     }
                 }
             )
+            var p = phone.removePrefix("0")
+            getResponse(p,formateddate)
+
         })
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
 
