@@ -1,37 +1,27 @@
 {
   "project_info": {
-    "project_number": "768226811505",
-    "firebase_url": "https://petstate1-default-rtdb.firebaseio.com",
-    "project_id": "petstate1",
-    "storage_bucket": "petstate1.appspot.com"
+    "project_number": "652452266975",
+    "firebase_url": "https://petstate-4fcd8-default-rtdb.firebaseio.com",
+    "project_id": "petstate-4fcd8",
+    "storage_bucket": "petstate-4fcd8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:768226811505:android:5f17b43775c7b4c7c885d0",
+        "mobilesdk_app_id": "1:652452266975:android:d405adf7a3383f57d0ba6a",
         "android_client_info": {
-          "package_name": "com.egerton.petstate"
+          "package_name": "om.egerton.petstate"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "768226811505-4gogkpo4f8p5kg9jb553qmoqnb6kofbu.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyANqYPIpKUbJErl8VW0pkyN_mzpO1gV64o"
+          "current_key": "AIzaSyBVenNZywg-UDrm4nnl59SeQ1LIDTuWhyk"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "768226811505-4gogkpo4f8p5kg9jb553qmoqnb6kofbu.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
